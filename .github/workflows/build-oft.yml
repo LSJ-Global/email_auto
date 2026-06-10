@@ -12,6 +12,7 @@ on:
       - "**/*.webp"
       - "**/*.svg"
       - "!.github/**"
+      - "!tools/**"
       - "!**/*_oft_build.html"
   workflow_dispatch:
     inputs:
@@ -35,7 +36,7 @@ concurrency:
 jobs:
   build-oft:
     name: Build .oft from uploaded HTML folders
-    runs-on: [self-hosted, Windows, outlook]
+    runs-on: windows-latest
 
     steps:
       - name: Check out repository
@@ -44,9 +45,14 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.ref_name }}
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
       - name: Determine target folders
         id: targets
-        shell: powershell
+        shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $folders = New-Object "System.Collections.Generic.List[string]"
@@ -109,13 +115,13 @@ jobs:
             }
 
             foreach ($path in $changed) {
-              if ($path -match "\.html?$" -and $path -notmatch "^\.github/") {
+              if ($path -match "\.html?$" -and $path -notmatch "^\.github/" -and $path -notmatch "^tools/") {
                 $dir = Split-Path -Path $path -Parent
                 if ([string]::IsNullOrWhiteSpace($dir)) {
                   $dir = "."
                 }
                 $folders.Add($dir.Replace("\", "/"))
-              } elseif ($path -match "\.(png|jpe?g|gif|webp|svg)$" -and $path -notmatch "^\.github/") {
+              } elseif ($path -match "\.(png|jpe?g|gif|webp|svg)$" -and $path -notmatch "^\.github/" -and $path -notmatch "^tools/") {
                 $htmlFolder = Find-NearestHtmlFolder -ChangedPath $path
                 if (-not [string]::IsNullOrWhiteSpace($htmlFolder)) {
                   $folders.Add($htmlFolder)
@@ -125,7 +131,7 @@ jobs:
           }
 
           if ($scanAllFolders) {
-            Get-ChildItem -Path . -Directory | ForEach-Object {
+            Get-ChildItem -Path . -Directory | Where-Object { $_.Name -notin @(".git", ".github", "tools") } | ForEach-Object {
               $htmlFiles = @(Get-ChildItem -LiteralPath $_.FullName -File -Recurse | Where-Object { $_.Extension -match "^\.html?$" })
               if ($htmlFiles.Count -gt 0) {
                 $folders.Add($_.Name)
@@ -145,9 +151,13 @@ jobs:
           Write-Host "Target folders:"
           $uniqueFolders | ForEach-Object { Write-Host " - $_" }
 
-      - name: Convert HTML to OFT with Outlook
+      - name: Restore converter
+        shell: pwsh
+        run: dotnet restore tools/HtmlToOft/HtmlToOft.csproj
+
+      - name: Convert HTML to OFT
         id: build
-        shell: powershell
+        shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $folders = @'
@@ -157,12 +167,9 @@ jobs:
 
           foreach ($folder in $folders) {
             Write-Host "Building OFT files in $folder"
-            & .\scripts\build-oft.ps1 `
-              -Folder $folder `
-              -Repository "${{ github.repository }}" `
-              -RefName "${{ github.ref_name }}" `
-              -CommitSha "${{ github.sha }}" `
-              -RewriteRelativeImageSources
+            dotnet run --project tools/HtmlToOft/HtmlToOft.csproj -- `
+              --folder "$folder" `
+              --repository-root "$PWD"
 
             $generated += Get-ChildItem -LiteralPath $folder -File -Recurse | Where-Object {
               $_.Name -like "*.oft" -or $_.Name -like "*_oft_build.json"
@@ -190,7 +197,7 @@ jobs:
 
       - name: Commit generated OFT files
         if: github.event_name == 'push' || github.event.inputs.commit_outputs == 'true'
-        shell: powershell
+        shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $paths = @'
