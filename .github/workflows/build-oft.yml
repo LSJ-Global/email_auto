@@ -236,4 +236,6 @@ jobs:
           }
 
           git commit -m "Generate Outlook templates [skip ci]"
+          git fetch origin ${{ github.ref_name }}
+          git rebase origin/${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}
