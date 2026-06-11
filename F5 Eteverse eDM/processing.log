@@ -1,0 +1,16 @@
+[2026-06-11T08:31:01Z] Processed F5 Eteverse eDM_www.naver.com.png
+SHA-256: eb31fb1b07dd0219d02866db72f867ac570a2eb9b59e174ba3cacf4c8696c612
+Landing URL: https://www.naver.com
+Raw base URL: https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/F5%20Eteverse%20eDM/images
+Original dimensions: 701x1800
+Overall background: #031940
+CTA background: #00193D
+Section backgrounds: top=#00193D, light=#F3FAFF, agenda=#041940, footer=#061B30
+CTA core bbox: {'x': 42, 'y': 456, 'width': 257, 'height': 59, 'x2': 299, 'y2': 515}
+CTA safe bbox: {'x': 34, 'y': 448, 'width': 273, 'height': 75, 'x2': 307, 'y2': 523} margin={'left': 8, 'right': 8, 'top': 8, 'bottom': 8}
+Full recomposition pixel match: True
+CTA row recomposition pixel match: True
+Button edge saturated-blue pixels: 0
+HTML validation: {'local': {'anchor_count': 1, 'only_cta_anchor': True, 'no_forbidden_constructs': True, 'all_tables_have_required_attrs': True, 'all_tds_have_required_style': True, 'all_images_display_block': True, 'cta_bgcolor_present': True, 'cta_image_dimensions_match': True}, 'remote': {'anchor_count': 1, 'only_cta_anchor': True, 'no_forbidden_constructs': True, 'all_tables_have_required_attrs': True, 'all_tds_have_required_style': True, 'all_images_display_block': True, 'cta_bgcolor_present': True, 'cta_image_dimensions_match': True}}
+EML validation: {'crcrlf_count': 0, 'parser_defects': [], 'content_type': 'text/html', 'content_transfer_encoding': 'quoted-printable', 'x_unsent': '1'}
+Start git: fetch success; ahead/behind 0/0; confirmation pull failed DNS but no rebase needed after fetch.
