@@ -1,0 +1,13 @@
+[2026-06-11T07:58:08.798799Z] Processed test_image_www.naver.com.png
+SHA-256: 617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023
+Landing URL: https://www.naver.com
+Raw base URL: https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/test_image/images
+Overall background: #000000
+CTA background: #000000
+CTA core bbox: {'x': 236, 'y': 1215, 'width': 228, 'height': 48, 'x2': 464, 'y2': 1263}
+CTA safe bbox: {'x': 228, 'y': 1207, 'width': 244, 'height': 64, 'x2': 472, 'y2': 1271} margin={'left': 8, 'right': 8, 'top': 8, 'bottom': 8}
+Full recomposition pixel match: True
+CTA row recomposition pixel match: True
+HTML validation: {'local': {'anchor_count': 1, 'only_cta_anchor': True, 'no_forbidden_constructs': True, 'all_tables_have_required_attrs': True, 'all_images_display_block': True, 'cta_bgcolor_present': True}, 'remote': {'anchor_count': 1, 'only_cta_anchor': True, 'no_forbidden_constructs': True, 'all_tables_have_required_attrs': True, 'all_images_display_block': True, 'cta_bgcolor_present': True}}
+EML validation: {'crcrlf_count': 0, 'parser_defects': [], 'content_type': 'text/html', 'content_transfer_encoding': 'quoted-printable', 'x_unsent': '1'}
+Start git: fetch success; ahead/behind 0/0; confirmation pull failed DNS but no rebase needed after fetch.
