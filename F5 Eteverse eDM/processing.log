@@ -1,0 +1,7 @@
+2026-06-12T08:36:16+09:00 start F5 Eteverse eDM_www.naver.com.png
+2026-06-12T08:36:16+09:00 source_sha256=eb31fb1b07dd0219d02866db72f867ac570a2eb9b59e174ba3cacf4c8696c612
+2026-06-12T08:36:16+09:00 landing_url=https://www.naver.com
+2026-06-12T08:36:16+09:00 raw_base=https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/F5%20Eteverse%20eDM/images
+2026-06-12T08:36:16+09:00 image_bg=#F3FAFF cta_bg=#00193D
+2026-06-12T08:36:16+09:00 cta_bbox_detected=(42, 456, 298, 515) safe=(34, 448, 306, 523) margin=8
+2026-06-12T08:36:16+09:00 validation_overall_ok=True

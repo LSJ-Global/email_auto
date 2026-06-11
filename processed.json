@@ -1,0 +1,30 @@
+{
+  "0612 test": {
+    "image_name": "0612 test",
+    "slug": "0612 test",
+    "status": "completed",
+    "source_file": "0612 test_www.naver.com.png",
+    "source_sha256": "367910436357f71ecfc99ac3ee161572b17d081a40eafab7aa05969bd1d20ee4",
+    "landing_url": "https://www.naver.com",
+    "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/0612%20test/images",
+    "processed_at": "2026-06-12T08:36:16+09:00",
+    "summary_path": "0612 test/summary.json",
+    "html_path": "0612 test/0612 test.html",
+    "eml_path": "0612 test/0612 test.eml",
+    "validation_overall_ok": true
+  },
+  "F5 Eteverse eDM": {
+    "image_name": "F5 Eteverse eDM",
+    "slug": "F5 Eteverse eDM",
+    "status": "completed",
+    "source_file": "F5 Eteverse eDM_www.naver.com.png",
+    "source_sha256": "eb31fb1b07dd0219d02866db72f867ac570a2eb9b59e174ba3cacf4c8696c612",
+    "landing_url": "https://www.naver.com",
+    "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/F5%20Eteverse%20eDM/images",
+    "processed_at": "2026-06-12T08:36:16+09:00",
+    "summary_path": "F5 Eteverse eDM/summary.json",
+    "html_path": "F5 Eteverse eDM/F5 Eteverse eDM.html",
+    "eml_path": "F5 Eteverse eDM/F5 Eteverse eDM.eml",
+    "validation_overall_ok": true
+  }
+}

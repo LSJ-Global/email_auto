@@ -1,0 +1,7 @@
+2026-06-12T08:36:16+09:00 start 0612 test_www.naver.com.png
+2026-06-12T08:36:16+09:00 source_sha256=367910436357f71ecfc99ac3ee161572b17d081a40eafab7aa05969bd1d20ee4
+2026-06-12T08:36:16+09:00 landing_url=https://www.naver.com
+2026-06-12T08:36:16+09:00 raw_base=https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/0612%20test/images
+2026-06-12T08:36:16+09:00 image_bg=#000000 cta_bg=#000000
+2026-06-12T08:36:16+09:00 cta_bbox_detected=(242, 817, 468, 864) safe=(234, 809, 476, 872) margin=8
+2026-06-12T08:36:16+09:00 validation_overall_ok=True

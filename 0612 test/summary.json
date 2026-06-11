@@ -1,0 +1,94 @@
+{
+  "image_name": "0612 test",
+  "slug": "0612 test",
+  "status": "completed",
+  "source_file": "0612 test_www.naver.com.png",
+  "source_sha256": "367910436357f71ecfc99ac3ee161572b17d081a40eafab7aa05969bd1d20ee4",
+  "landing_url": "https://www.naver.com",
+  "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/0612%20test/images",
+  "created_at": "2026-06-12T08:36:16+09:00",
+  "image_size": {
+    "width": 710,
+    "height": 2113
+  },
+  "generated_files": [
+    "0612 test/source.png",
+    "0612 test/0612 test_local.html",
+    "0612 test/0612 test.html",
+    "0612 test/0612 test.eml",
+    "0612 test/images.zip",
+    "0612 test/images/cta_button.png",
+    "0612 test/images/cta_left.png",
+    "0612 test/images/cta_right.png",
+    "0612 test/images/slice_01.png",
+    "0612 test/images/slice_03.png",
+    "0612 test/summary.json",
+    "0612 test/processing.log"
+  ],
+  "detected_image_background_color": "#000000",
+  "detected_cta_row_background_color": "#000000",
+  "cta_button_bbox": {
+    "detected": {
+      "x1": 242,
+      "y1": 817,
+      "x2": 468,
+      "y2": 864
+    },
+    "safe": {
+      "x1": 234,
+      "y1": 809,
+      "x2": 476,
+      "y2": 872
+    },
+    "safe_margin_px": 8,
+    "component_candidates": [
+      {
+        "pixels": 7994,
+        "bbox": [
+          242,
+          817,
+          468,
+          864
+        ]
+      },
+      {
+        "pixels": 76,
+        "bbox": [
+          426,
+          834,
+          438,
+          841
+        ]
+      }
+    ]
+  },
+  "git": {
+    "start": {
+      "start_local_save_commit": "cf44005 chore: save local changes before eDM automation",
+      "start_local_save_push": "pushed cf44005 to origin/main",
+      "start_pull_rebase": "fetch completed; HEAD and origin/main matched (0 ahead, 0 behind)"
+    },
+    "artifact_commit_push": null,
+    "final_pull_after_2_min": null
+  },
+  "validation": {
+    "html_static_ok": true,
+    "html_errors": [],
+    "eml_ok": true,
+    "eml": {
+      "crcrlf_count": 0,
+      "parser_defects": [],
+      "has_html_content_type": true,
+      "has_qp_cte": true,
+      "has_x_unsent": true
+    },
+    "cta_row_exact_match": true,
+    "button_dimensions_match_file": true,
+    "button_edge_cta_color_pixels": 0,
+    "button_not_cut": true,
+    "body_and_wrapper_background_not_applied": true,
+    "forbidden_layout_absent": true,
+    "only_button_linked": true,
+    "overall_ok": true
+  }
+}
