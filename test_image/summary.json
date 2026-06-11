@@ -140,10 +140,23 @@
     }
   },
   "artifact_git": {
-    "commit": "pending",
-    "push": "pending"
+    "commit": "204317d",
+    "commit_message": "Generate eDM assets",
+    "push": {
+      "success": true,
+      "command": "git push origin main",
+      "result": "ef173a0..204317d main -> main"
+    }
   },
-  "final_pull_after_2min": "pending_after_successful_push",
+  "final_pull_after_2min": {
+    "attempted_at": "2026-06-11T08:54:04Z",
+    "success": true,
+    "command": "sleep 120 && git pull --rebase origin main",
+    "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+    "pulled_commit": "b5fd082",
+    "conflict": false,
+    "working_tree_clean_after_pull": true
+  },
   "validation": {
     "full_recomposition_pixel_match": true,
     "cta_row_recomposition_pixel_match": true,

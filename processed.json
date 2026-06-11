@@ -116,10 +116,23 @@
         }
       },
       "artifact_git": {
-        "commit": "pending",
-        "push": "pending"
+        "commit": "204317d",
+        "commit_message": "Generate eDM assets",
+        "push": {
+          "success": true,
+          "command": "git push origin main",
+          "result": "ef173a0..204317d main -> main"
+        }
       },
-      "final_pull_after_2min": "pending_after_successful_push"
+      "final_pull_after_2min": {
+        "attempted_at": "2026-06-11T08:54:04Z",
+        "success": true,
+        "command": "sleep 120 && git pull --rebase origin main",
+        "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+        "pulled_commit": "b5fd082",
+        "conflict": false,
+        "working_tree_clean_after_pull": true
+      }
     },
     {
       "source_filename": "test_image_www.naver.com.png",
@@ -234,10 +247,23 @@
         }
       },
       "artifact_git": {
-        "commit": "pending",
-        "push": "pending"
+        "commit": "204317d",
+        "commit_message": "Generate eDM assets",
+        "push": {
+          "success": true,
+          "command": "git push origin main",
+          "result": "ef173a0..204317d main -> main"
+        }
       },
-      "final_pull_after_2min": "pending_after_successful_push"
+      "final_pull_after_2min": {
+        "attempted_at": "2026-06-11T08:54:04Z",
+        "success": true,
+        "command": "sleep 120 && git pull --rebase origin main",
+        "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+        "pulled_commit": "b5fd082",
+        "conflict": false,
+        "working_tree_clean_after_pull": true
+      }
     }
   ],
   "by_sha256": {
@@ -356,10 +382,23 @@
         }
       },
       "artifact_git": {
-        "commit": "pending",
-        "push": "pending"
+        "commit": "204317d",
+        "commit_message": "Generate eDM assets",
+        "push": {
+          "success": true,
+          "command": "git push origin main",
+          "result": "ef173a0..204317d main -> main"
+        }
       },
-      "final_pull_after_2min": "pending_after_successful_push"
+      "final_pull_after_2min": {
+        "attempted_at": "2026-06-11T08:54:04Z",
+        "success": true,
+        "command": "sleep 120 && git pull --rebase origin main",
+        "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+        "pulled_commit": "b5fd082",
+        "conflict": false,
+        "working_tree_clean_after_pull": true
+      }
     },
     "617b93c25cfe8e58a9ee97e0ab1851346db841db6502285cdecaedb78e79a023": {
       "source_filename": "test_image_www.naver.com.png",
@@ -474,12 +513,44 @@
         }
       },
       "artifact_git": {
-        "commit": "pending",
-        "push": "pending"
+        "commit": "204317d",
+        "commit_message": "Generate eDM assets",
+        "push": {
+          "success": true,
+          "command": "git push origin main",
+          "result": "ef173a0..204317d main -> main"
+        }
       },
-      "final_pull_after_2min": "pending_after_successful_push"
+      "final_pull_after_2min": {
+        "attempted_at": "2026-06-11T08:54:04Z",
+        "success": true,
+        "command": "sleep 120 && git pull --rebase origin main",
+        "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+        "pulled_commit": "b5fd082",
+        "conflict": false,
+        "working_tree_clean_after_pull": true
+      }
     }
   },
   "skipped_candidates_last_run": [],
-  "last_run_at": "2026-06-11T08:50:35Z"
+  "last_run_at": "2026-06-11T08:50:35Z",
+  "final_pull_after_2min_last_run": {
+    "attempted_at": "2026-06-11T08:54:04Z",
+    "success": true,
+    "command": "sleep 120 && git pull --rebase origin main",
+    "result": "Fast-forward 204317d..b5fd082; pulled generated OFT outputs from origin/main",
+    "pulled_commit": "b5fd082",
+    "conflict": false,
+    "working_tree_clean_after_pull": true
+  },
+  "artifact_git_last_run": {
+    "commit": "204317d",
+    "commit_message": "Generate eDM assets",
+    "push": {
+      "success": true,
+      "command": "git push origin main",
+      "result": "ef173a0..204317d main -> main"
+    }
+  },
+  "last_metadata_update_at": "2026-06-11T08:54:04Z"
 }
