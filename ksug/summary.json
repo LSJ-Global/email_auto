@@ -25,7 +25,9 @@
     "eml": "ksug/ksug.eml",
     "images_zip": "ksug/images.zip",
     "summary": "ksug/summary.json",
-    "processing_log": "ksug/processing.log"
+    "processing_log": "ksug/processing.log",
+    "oft": "ksug/ksug.oft",
+    "oft_build_json": "ksug/ksug_oft_build.json"
   },
   "processed_at": "2026-06-15T09:47:01+09:00",
   "image_background_color": "#FFFFFF",
@@ -236,7 +238,8 @@
     "body_and_wrapper_background_not_applied": true,
     "sidecar_txt_git_excluded": true,
     "staged_sidecar_txt_files": [],
-    "passed": true
+    "passed": true,
+    "post_wait_pull_recorded": true
   },
   "start_git": {
     "initial_local_changes": [
@@ -258,9 +261,24 @@
     "git_error_resolution": []
   },
   "artifact_git": {
-    "status": "pending"
+    "status": "pushed",
+    "commit": "ae16142",
+    "message": "feat: add eDM outputs for Q3 F5 kakao and ksug",
+    "push": "success",
+    "remote": "origin/main"
   },
   "final_pull_after_wait": {
-    "status": "pending"
+    "status": "fast-forwarded",
+    "command": "git pull --rebase origin main",
+    "from": "ae16142",
+    "to": "ccdf8fb",
+    "result": "GitHub Actions generated OFT files and build metadata after 2-minute wait.",
+    "files_added": [
+      "Q3 F5 kakao/Q3 F5 kakao.oft",
+      "Q3 F5 kakao/Q3 F5 kakao_oft_build.json",
+      "ksug/ksug.oft",
+      "ksug/ksug_oft_build.json"
+    ],
+    "recorded_at": "2026-06-15T09:51:00+09:00"
   }
 }
