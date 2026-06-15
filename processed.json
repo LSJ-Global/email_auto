@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "processed": {
+    "ksug": {
+      "image_name": "ksug",
+      "slug": "ksug",
+      "status": "completed",
+      "source_file": "ksug.png",
+      "source_sha256": "88a04edc74774e8828023d17c7014219d851dd5b41ca1cf2de4fdf1201c4627b",
+      "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/regProcessStep1:2c484270-1ba8-4a9c-a2e4-abd60b7924f8",
+      "url_source": "sidecar_txt",
+      "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/ksug/images",
+      "generated_files": {
+        "source": "ksug/source.png",
+        "images_dir": "ksug/images",
+        "local_html": "ksug/ksug_local.html",
+        "html": "ksug/ksug.html",
+        "eml": "ksug/ksug.eml",
+        "images_zip": "ksug/images.zip",
+        "summary": "ksug/summary.json",
+        "processing_log": "ksug/processing.log"
+      },
+      "processed_at": "2026-06-15T09:47:01+09:00",
+      "validation_passed": true,
+      "image_background_color": "#FFFFFF",
+      "cta_row_background_colors": [
+        "#FFFFFF",
+        "#F0F0FF"
+      ],
+      "start_git": {
+        "initial_local_changes": [
+          "Q3 F5 kakao.png",
+          "Q3 F5 kakao.txt (excluded)",
+          "ksug.png",
+          "ksug.txt (excluded)"
+        ],
+        "local_save_commit": {
+          "created": true,
+          "commit": "164b69a",
+          "message": "chore: save local changes before eDM automation",
+          "push": "success"
+        },
+        "initial_pull_rebase": {
+          "command": "git pull --rebase origin main",
+          "result": "Already up to date."
+        },
+        "git_error_resolution": []
+      },
+      "artifact_git": {
+        "status": "pending"
+      },
+      "final_pull_after_wait": {
+        "status": "pending"
+      }
+    },
+    "Q3 F5 kakao": {
+      "image_name": "Q3 F5 kakao",
+      "slug": "Q3 F5 kakao",
+      "status": "completed",
+      "source_file": "Q3 F5 kakao.png",
+      "source_sha256": "f050af887535f19c4ebd6a7cf95f69acf3281f745b1d50846b8b3787ce74cfbd",
+      "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/home",
+      "url_source": "sidecar_txt",
+      "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/Q3%20F5%20kakao/images",
+      "generated_files": {
+        "source": "Q3 F5 kakao/source.png",
+        "images_dir": "Q3 F5 kakao/images",
+        "local_html": "Q3 F5 kakao/Q3 F5 kakao_local.html",
+        "html": "Q3 F5 kakao/Q3 F5 kakao.html",
+        "eml": "Q3 F5 kakao/Q3 F5 kakao.eml",
+        "images_zip": "Q3 F5 kakao/images.zip",
+        "summary": "Q3 F5 kakao/summary.json",
+        "processing_log": "Q3 F5 kakao/processing.log"
+      },
+      "processed_at": "2026-06-15T09:47:01+09:00",
+      "validation_passed": true,
+      "image_background_color": "#F0F0F0",
+      "cta_row_background_colors": [
+        "#FFFFFF"
+      ],
+      "start_git": {
+        "initial_local_changes": [
+          "Q3 F5 kakao.png",
+          "Q3 F5 kakao.txt (excluded)",
+          "ksug.png",
+          "ksug.txt (excluded)"
+        ],
+        "local_save_commit": {
+          "created": true,
+          "commit": "164b69a",
+          "message": "chore: save local changes before eDM automation",
+          "push": "success"
+        },
+        "initial_pull_rebase": {
+          "command": "git pull --rebase origin main",
+          "result": "Already up to date."
+        },
+        "git_error_resolution": []
+      },
+      "artifact_git": {
+        "status": "pending"
+      },
+      "final_pull_after_wait": {
+        "status": "pending"
+      }
+    }
+  },
+  "last_run_at": "2026-06-15T09:47:01+09:00",
+  "last_run": {
+    "run_at": "2026-06-15T09:47:01+09:00",
+    "processed": [
+      {
+        "image_name": "ksug",
+        "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/regProcessStep1:2c484270-1ba8-4a9c-a2e4-abd60b7924f8",
+        "url_source": "sidecar_txt",
+        "validation_passed": true
+      },
+      {
+        "image_name": "Q3 F5 kakao",
+        "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/home",
+        "url_source": "sidecar_txt",
+        "validation_passed": true
+      }
+    ],
+    "skipped": [],
+    "start_git": {
+      "initial_local_changes": [
+        "Q3 F5 kakao.png",
+        "Q3 F5 kakao.txt (excluded)",
+        "ksug.png",
+        "ksug.txt (excluded)"
+      ],
+      "local_save_commit": {
+        "created": true,
+        "commit": "164b69a",
+        "message": "chore: save local changes before eDM automation",
+        "push": "success"
+      },
+      "initial_pull_rebase": {
+        "command": "git pull --rebase origin main",
+        "result": "Already up to date."
+      },
+      "git_error_resolution": []
+    }
+  }
+}

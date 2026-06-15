@@ -1,0 +1,14 @@
+[2026-06-15T09:47:01+09:00] start image=Q3 F5 kakao source=Q3 F5 kakao.png
+url_source=sidecar_txt landing_url=https://www.f5appworld.com/event/AppWorldSeoul/home
+slice_01 y=0-1320 bg=#000000
+slice_02 y=1320-1863 bg=#FFFFFF
+cta_01 bbox=(315, 1863, 1087, 2047) bg=#FFFFFF row_exact=True edge_saturated=0
+slice_03 y=2047-2160 bg=#FFFFFF
+slice_04 y=2160-4162 bg=#F0F0F0
+slice_05 y=4162-5552 bg=#000000
+slice_06 y=5552-5860 bg=#F0F0F0
+full_recomposition_exact=True
+html_validation_passed=True
+eml_validation_passed=True
+sidecar_txt_git_excluded=True
+validation_passed=True

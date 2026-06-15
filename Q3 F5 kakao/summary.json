@@ -1,0 +1,216 @@
+{
+  "image_name": "Q3 F5 kakao",
+  "slug": "Q3 F5 kakao",
+  "status": "completed",
+  "source_file": "Q3 F5 kakao.png",
+  "source_sha256": "f050af887535f19c4ebd6a7cf95f69acf3281f745b1d50846b8b3787ce74cfbd",
+  "source_dimensions": [
+    1404,
+    5860
+  ],
+  "source_mode": "RGBA",
+  "alpha_extrema": [
+    255,
+    255
+  ],
+  "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/home",
+  "url_source": "sidecar_txt",
+  "url_sidecar_path": "Q3 F5 kakao.txt",
+  "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/Q3%20F5%20kakao/images",
+  "generated_files": {
+    "source": "Q3 F5 kakao/source.png",
+    "images_dir": "Q3 F5 kakao/images",
+    "local_html": "Q3 F5 kakao/Q3 F5 kakao_local.html",
+    "html": "Q3 F5 kakao/Q3 F5 kakao.html",
+    "eml": "Q3 F5 kakao/Q3 F5 kakao.eml",
+    "images_zip": "Q3 F5 kakao/images.zip",
+    "summary": "Q3 F5 kakao/summary.json",
+    "processing_log": "Q3 F5 kakao/processing.log"
+  },
+  "processed_at": "2026-06-15T09:47:01+09:00",
+  "image_background_color": "#F0F0F0",
+  "cta_row_background_colors": [
+    "#FFFFFF"
+  ],
+  "slices": [
+    {
+      "type": "slice",
+      "file": "slice_01.png",
+      "y": [
+        0,
+        1320
+      ],
+      "width": 1404,
+      "height": 1320,
+      "bgcolor": "#000000"
+    },
+    {
+      "type": "slice",
+      "file": "slice_02.png",
+      "y": [
+        1320,
+        1863
+      ],
+      "width": 1404,
+      "height": 543,
+      "bgcolor": "#FFFFFF"
+    },
+    {
+      "type": "cta",
+      "index": 1,
+      "y": [
+        1863,
+        2047
+      ],
+      "bgcolor": "#FFFFFF",
+      "left": {
+        "file": "cta_01_left.png",
+        "width": 315,
+        "height": 184
+      },
+      "button": {
+        "file": "cta_01_button.png",
+        "width": 772,
+        "height": 184
+      },
+      "right": {
+        "file": "cta_01_right.png",
+        "width": 317,
+        "height": 184
+      }
+    },
+    {
+      "type": "slice",
+      "file": "slice_03.png",
+      "y": [
+        2047,
+        2160
+      ],
+      "width": 1404,
+      "height": 113,
+      "bgcolor": "#FFFFFF"
+    },
+    {
+      "type": "slice",
+      "file": "slice_04.png",
+      "y": [
+        2160,
+        4162
+      ],
+      "width": 1404,
+      "height": 2002,
+      "bgcolor": "#F0F0F0"
+    },
+    {
+      "type": "slice",
+      "file": "slice_05.png",
+      "y": [
+        4162,
+        5552
+      ],
+      "width": 1404,
+      "height": 1390,
+      "bgcolor": "#000000"
+    },
+    {
+      "type": "slice",
+      "file": "slice_06.png",
+      "y": [
+        5552,
+        5860
+      ],
+      "width": 1404,
+      "height": 308,
+      "bgcolor": "#F0F0F0"
+    }
+  ],
+  "validation": {
+    "full_recomposition_exact": true,
+    "cta_rows": [
+      {
+        "index": 1,
+        "bbox": [
+          315,
+          1863,
+          1087,
+          2047
+        ],
+        "detected_color_bbox": [
+          323,
+          1871,
+          1079,
+          2039
+        ],
+        "safe_margin_px": 8,
+        "row_background_color": "#FFFFFF",
+        "button_file": "images/cta_01_button.png",
+        "button_dimensions": [
+          772,
+          184
+        ],
+        "row_recomposition_exact": true,
+        "button_edge_saturated_pixel_count": 0,
+        "button_not_cut_validation": true
+      }
+    ],
+    "html": {
+      "no_image_map_script_absolute_background_image": true,
+      "body_has_no_image_background": true,
+      "outer_wrapper_has_no_bgcolor": true,
+      "all_tables_spacing_attrs": true,
+      "all_images_block_with_dimensions": true,
+      "button_links_only": true,
+      "cta_bgcolor_present": true,
+      "main_table_bgcolor_limited": true,
+      "passed": true
+    },
+    "local_html": {
+      "no_image_map_script_absolute_background_image": true,
+      "body_has_no_image_background": true,
+      "outer_wrapper_has_no_bgcolor": true,
+      "all_tables_spacing_attrs": true,
+      "all_images_block_with_dimensions": true,
+      "button_links_only": true,
+      "cta_bgcolor_present": true,
+      "main_table_bgcolor_limited": true,
+      "passed": true
+    },
+    "eml": {
+      "crcrlf_count": 0,
+      "mime_defects": [],
+      "content_type": "text/html",
+      "content_transfer_encoding": "quoted-printable",
+      "x_unsent": "1",
+      "passed": true
+    },
+    "body_and_wrapper_background_not_applied": true,
+    "sidecar_txt_git_excluded": true,
+    "staged_sidecar_txt_files": [],
+    "passed": true
+  },
+  "start_git": {
+    "initial_local_changes": [
+      "Q3 F5 kakao.png",
+      "Q3 F5 kakao.txt (excluded)",
+      "ksug.png",
+      "ksug.txt (excluded)"
+    ],
+    "local_save_commit": {
+      "created": true,
+      "commit": "164b69a",
+      "message": "chore: save local changes before eDM automation",
+      "push": "success"
+    },
+    "initial_pull_rebase": {
+      "command": "git pull --rebase origin main",
+      "result": "Already up to date."
+    },
+    "git_error_resolution": []
+  },
+  "artifact_git": {
+    "status": "pending"
+  },
+  "final_pull_after_wait": {
+    "status": "pending"
+  }
+}
