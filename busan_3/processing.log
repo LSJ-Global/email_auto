@@ -1,0 +1,12 @@
+[2026-06-16T14:06:33+09:00] processed busan_3.png
+url_source=sidecar_txt
+landing_url=https://www.f5appworld.com/event/AppWorldSeoul/home
+origin=https://github.com/LSJ-Global/email_auto.git
+owner_repo_branch=LSJ-Global/email_auto/main
+raw_image_base_url=https://raw.githubusercontent.com/LSJ-Global/email_auto/main/busan_3/images
+original_size=1400x2643
+display_width=750
+cta_fill_bbox=(343,1740,714,146)
+cta_crop_bbox=(319,1728,762,172)
+cta_bg=#102068
+validation_passed=True
