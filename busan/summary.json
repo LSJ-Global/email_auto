@@ -127,7 +127,7 @@
     "artifact_commit": "146dc94 feat: add busan eDM assets",
     "artifact_push": "success: pushed origin/main 146dc94",
     "post_2min_pull_rebase": "success: fast-forward 146dc94..111cf77; added busan/busan.oft and busan/busan_oft_build.json",
-    "metadata_commit": "pending: records post-2min pull result"
+    "metadata_commit": "success: post-pull metadata recorded and pushed to origin/main"
   },
   "validation": {
     "html_anchor_count": 1,
@@ -150,5 +150,6 @@
     "sidecar_txt_git_exclusion_checked": true,
     "passed": true
   },
-  "post_pull_recorded_at": "2026-06-16T13:46:22+09:00"
+  "post_pull_recorded_at": "2026-06-16T13:46:22+09:00",
+  "metadata_finalized_at": "2026-06-16T13:47:02+09:00"
 }
