@@ -16,7 +16,7 @@
     ],
     "url_repetition_applied": false,
     "unused_sidecar_urls": [],
-    "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/busan/images",
+    "raw_image_base_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/busan/images",
     "source_copy": "busan/source.png",
     "generated_files": [
       "busan/busan_local.html",
@@ -128,7 +128,8 @@
       "artifact_commit": "146dc94 feat: add busan eDM assets",
       "artifact_push": "success: pushed origin/main 146dc94",
       "post_2min_pull_rebase": "success: fast-forward 146dc94..111cf77; added busan/busan.oft and busan/busan_oft_build.json",
-      "metadata_commit": "success: post-pull metadata recorded and pushed to origin/main"
+      "metadata_commit": "success: post-pull metadata recorded and pushed to origin/main",
+      "raw_url_fix": "updated to origin remote LSJ-Global/email_auto"
     },
     "validation": {
       "html_anchor_count": 1,
@@ -152,6 +153,7 @@
       "passed": true
     },
     "post_pull_recorded_at": "2026-06-16T13:46:22+09:00",
-    "metadata_finalized_at": "2026-06-16T13:47:02+09:00"
+    "metadata_finalized_at": "2026-06-16T13:47:02+09:00",
+    "raw_url_fixed_at": "2026-06-16T13:48:35+09:00"
   }
 }

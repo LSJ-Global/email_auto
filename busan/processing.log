@@ -13,3 +13,4 @@ sidecar txt content not copied; only final URL mapping recorded.
 [2026-06-16T13:46:22+09:00] artifact commit/push: 146dc94 pushed successfully
 [2026-06-16T13:46:22+09:00] post 2-minute pull: fast-forward to 111cf77; OFT outputs added
 [2026-06-16T13:47:02+09:00] metadata push status finalized
+[2026-06-16T13:48:35+09:00] raw image base URL updated to https://raw.githubusercontent.com/LSJ-Global/email_auto/main/busan/images
