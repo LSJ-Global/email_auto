@@ -1,0 +1,151 @@
+{
+  "image_name": "busan",
+  "slug": "busan",
+  "status": "complete",
+  "original_filename": "busan.png",
+  "original_sha256": "b91f185f41c1c7b5ac4c0ea27dd910c7cd4b3cecb22eeb798b2d3c4c2be50cbe",
+  "landing_url": "https://www.f5appworld.com/event/AppWorldSeoul/home",
+  "url_source": "sidecar_txt",
+  "button_urls": [
+    {
+      "button": "cta_button_01.png",
+      "href": "https://www.f5appworld.com/event/AppWorldSeoul/home",
+      "source_index": 1
+    }
+  ],
+  "url_repetition_applied": false,
+  "unused_sidecar_urls": [],
+  "raw_image_base_url": "https://raw.githubusercontent.com/YunseoLsj/test_eDM/main/busan/images",
+  "source_copy": "busan/source.png",
+  "generated_files": [
+    "busan/busan_local.html",
+    "busan/busan.html",
+    "busan/busan.eml",
+    "busan/summary.json",
+    "busan/processing.log",
+    "busan/images.zip",
+    "busan/images/slice_01_top.png",
+    "busan/images/cta_bg_left_01.png",
+    "busan/images/cta_button_01.png",
+    "busan/images/cta_bg_right_01.png",
+    "busan/images/slice_02_bottom.png"
+  ],
+  "processed_at": "2026-06-16T13:43:04+09:00",
+  "image_dimensions": {
+    "width": 1400,
+    "height": 2643
+  },
+  "slices": [
+    {
+      "file": "images/slice_01_top.png",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1400,
+        "height": 1728
+      },
+      "bgcolor": "#E8F0F0"
+    },
+    {
+      "file": "images/cta_bg_left_01.png",
+      "box": {
+        "x": 0,
+        "y": 1728,
+        "width": 323,
+        "height": 172
+      },
+      "bgcolor": "#082068"
+    },
+    {
+      "file": "images/cta_button_01.png",
+      "box": {
+        "x": 323,
+        "y": 1728,
+        "width": 754,
+        "height": 172
+      },
+      "bgcolor": "#001060"
+    },
+    {
+      "file": "images/cta_bg_right_01.png",
+      "box": {
+        "x": 1077,
+        "y": 1728,
+        "width": 323,
+        "height": 172
+      },
+      "bgcolor": "#001058"
+    },
+    {
+      "file": "images/slice_02_bottom.png",
+      "box": {
+        "x": 0,
+        "y": 1900,
+        "width": 1400,
+        "height": 743
+      },
+      "bgcolor": "#000010"
+    }
+  ],
+  "image_background_color": "#102068",
+  "cta_row_background_color": "#102068",
+  "cta_button_bboxes": [
+    {
+      "button": "cta_button_01.png",
+      "bbox": {
+        "x": 323,
+        "y": 1728,
+        "width": 754,
+        "height": 172
+      },
+      "detected_fill_bbox": {
+        "x": 339,
+        "y": 1740,
+        "width": 722,
+        "height": 146
+      },
+      "safety_margin_px": {
+        "left": 16,
+        "right": 16,
+        "top": 12,
+        "bottom": 14
+      }
+    }
+  ],
+  "full_background_not_applied_to_body_or_outer_wrapper": true,
+  "sidecar_txt_git_exclusion": {
+    "path": "busan.txt",
+    "excluded_from_git": true,
+    "content_recording_policy": "URL source and final URL mapping only"
+  },
+  "git": {
+    "initial_local_save_commit": "f70109b chore: save local changes before eDM automation",
+    "initial_push": "success",
+    "initial_pull_rebase": "already up to date",
+    "artifact_commit": "pending",
+    "artifact_push": "pending",
+    "post_2min_pull_rebase": "pending",
+    "metadata_commit": "pending"
+  },
+  "validation": {
+    "html_anchor_count": 1,
+    "html_links_match_button_urls": true,
+    "button_only_links": true,
+    "no_map_area_script_absolute_or_background_image": true,
+    "all_tables_zero_spacing": true,
+    "all_images_display_block_and_dimensions_match": true,
+    "cta_bgcolor_present": true,
+    "body_has_no_image_background": true,
+    "outer_wrapper_has_no_image_background": true,
+    "exact_full_recomposition": true,
+    "exact_cta_row_recomposition": true,
+    "eml_crcrlf_count": 0,
+    "eml_defects": [],
+    "eml_content_type": "text/html",
+    "eml_transfer_encoding": "quoted-printable",
+    "eml_x_unsent": "1",
+    "eml_valid": true,
+    "sidecar_txt_git_exclusion_checked": true,
+    "passed": true
+  }
+}
