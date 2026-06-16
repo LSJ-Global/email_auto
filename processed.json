@@ -29,7 +29,9 @@
       "busan/images/cta_bg_left_01.png",
       "busan/images/cta_button_01.png",
       "busan/images/cta_bg_right_01.png",
-      "busan/images/slice_02_bottom.png"
+      "busan/images/slice_02_bottom.png",
+      "busan/busan.oft",
+      "busan/busan_oft_build.json"
     ],
     "processed_at": "2026-06-16T13:43:04+09:00",
     "image_dimensions": {
@@ -123,10 +125,10 @@
       "initial_local_save_commit": "f70109b chore: save local changes before eDM automation",
       "initial_push": "success",
       "initial_pull_rebase": "already up to date",
-      "artifact_commit": "pending",
-      "artifact_push": "pending",
-      "post_2min_pull_rebase": "pending",
-      "metadata_commit": "pending"
+      "artifact_commit": "146dc94 feat: add busan eDM assets",
+      "artifact_push": "success: pushed origin/main 146dc94",
+      "post_2min_pull_rebase": "success: fast-forward 146dc94..111cf77; added busan/busan.oft and busan/busan_oft_build.json",
+      "metadata_commit": "pending: records post-2min pull result"
     },
     "validation": {
       "html_anchor_count": 1,
@@ -148,6 +150,7 @@
       "eml_valid": true,
       "sidecar_txt_git_exclusion_checked": true,
       "passed": true
-    }
+    },
+    "post_pull_recorded_at": "2026-06-16T13:46:22+09:00"
   }
 }

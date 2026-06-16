@@ -10,3 +10,5 @@ exact_full_recomposition: True
 exact_cta_row_recomposition: True
 validation_passed: True
 sidecar txt content not copied; only final URL mapping recorded.
+[2026-06-16T13:46:22+09:00] artifact commit/push: 146dc94 pushed successfully
+[2026-06-16T13:46:22+09:00] post 2-minute pull: fast-forward to 111cf77; OFT outputs added
