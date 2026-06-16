@@ -32,7 +32,9 @@
     "busan_2/images/cta_bg_left_01.png",
     "busan_2/images/cta_button_01.png",
     "busan_2/images/cta_bg_right_01.png",
-    "busan_2/images/slice_02_bottom.png"
+    "busan_2/images/slice_02_bottom.png",
+    "busan_2/busan_2.oft",
+    "busan_2/busan_2_oft_build.json"
   ],
   "processed_at": "2026-06-16T13:53:20+09:00",
   "image_dimensions": {
@@ -131,9 +133,10 @@
     "initial_local_save_commit": "470fde4 chore: save local changes before eDM automation",
     "initial_push": "success",
     "initial_pull_rebase": "already up to date",
-    "artifact_commit": "pending",
-    "artifact_push": "pending",
-    "post_2min_pull_rebase": "pending"
+    "artifact_commit": "a66d42b feat: add busan_2 eDM assets",
+    "artifact_push": "success: pushed origin/main a66d42b after fetch/rebase resolved non-fast-forward push rejection",
+    "post_2min_pull_rebase": "success: fast-forward a66d42b..852855a; added busan_2/busan_2.oft and busan_2/busan_2_oft_build.json",
+    "push_error_resolution": "initial artifact push rejected non-fast-forward; fetched origin/main, rebased over 1654a92, retried push successfully"
   },
   "validation": {
     "html_anchor_count": 1,
@@ -157,5 +160,7 @@
     "eml_valid": true,
     "sidecar_txt_git_exclusion_checked": true,
     "passed": true
-  }
+  },
+  "post_pull_recorded_at": "2026-06-16T13:56:25+09:00",
+  "metadata_finalized_at": "2026-06-16T13:56:25+09:00"
 }
