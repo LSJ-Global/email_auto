@@ -366,7 +366,9 @@
       "busan_3/images/cta_bg_left_01.png",
       "busan_3/images/cta_button_01.png",
       "busan_3/images/cta_bg_right_01.png",
-      "busan_3/images/slice_02_bottom.png"
+      "busan_3/images/slice_02_bottom.png",
+      "busan_3/busan_3.oft",
+      "busan_3/busan_3_oft_build.json"
     ],
     "processed_at": "2026-06-16T14:06:33+09:00",
     "slices": [
@@ -461,10 +463,10 @@
       "initial_local_save_commit": "fd682c9 chore: save local changes before eDM automation",
       "initial_push": "success: pushed origin/main fd682c9",
       "initial_pull_rebase": "success: already up to date",
-      "artifact_commit": "pending",
-      "artifact_push": "pending",
-      "post_2min_pull_rebase": "pending",
-      "metadata_commit": "pending"
+      "artifact_commit": "b47a2c4 feat: add busan_3 eDM assets",
+      "artifact_push": "success: pushed origin/main b47a2c4",
+      "post_2min_pull_rebase": "success: fast-forward b47a2c4..3bda54f; added busan_3/busan_3.oft and busan_3/busan_3_oft_build.json",
+      "metadata_commit": "success: metadata update committed after post-pull and pushed to origin/main"
     },
     "validation": {
       "main_table_display_width_600_750_centered": true,
@@ -492,6 +494,8 @@
       "eml_valid": true,
       "sidecar_txt_git_exclusion_checked": true,
       "passed": true
-    }
+    },
+    "post_pull_recorded_at": "2026-06-16T14:10:02+09:00",
+    "metadata_finalized_at": "2026-06-16T14:10:23+09:00"
   }
 }
