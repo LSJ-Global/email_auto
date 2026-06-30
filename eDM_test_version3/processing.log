@@ -7,3 +7,5 @@ display_width=701 scale=1.0
 pixel_reconstruction_exact=True
 validation_passed=True
 sidecar_txt_git_excluded=True
+artifact_git_commit=e1a773f feat: add eDM assets for eDM_test_version3
+artifact_git_push=success: pushed main to origin/main
