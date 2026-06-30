@@ -1,29 +1,3 @@
 {
-  "images": {
-    "eDM_test_version3": {
-      "status": "completed",
-      "image_name": "eDM_test_version3",
-      "slug": "eDM_test_version3",
-      "source_filename": "eDM_test_version3.png",
-      "source_sha256": "e4b96a76cb64450e668930d28499d987cc0db1637cfd7359314633517db4ce4c",
-      "source_width": 701,
-      "source_height": 2808,
-      "display_width": 701,
-      "landing_url": "https://www.youtube.com/watch?v=gGvGxmM-lUA",
-      "url_source": "sidecar_txt",
-      "button_urls": [
-        {
-          "button": 1,
-          "url": "https://www.youtube.com/watch?v=gGvGxmM-lUA"
-        },
-        {
-          "button": 2,
-          "url": "https://www.youtube.com/watch?v=ozREwne9fU8"
-        }
-      ],
-      "raw_image_base_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/eDM_test_version3/images",
-      "processed_at": "2026-06-30T05:34:16.087683+00:00",
-      "summary_path": "eDM_test_version3/summary.json"
-    }
-  }
+  "images": {}
 }
