@@ -1,0 +1,9 @@
+[2026-06-30T05:34:16.087683+00:00] processed eDM_test_version3
+source=eDM_test_version3.png sha256=e4b96a76cb64450e668930d28499d987cc0db1637cfd7359314633517db4ce4c
+url_source=sidecar_txt
+button_urls=[{"button": 1, "url": "https://www.youtube.com/watch?v=gGvGxmM-lUA"}, {"button": 2, "url": "https://www.youtube.com/watch?v=ozREwne9fU8"}]
+raw_base=https://raw.githubusercontent.com/LSJ-Global/email_auto/main/eDM_test_version3/images
+display_width=701 scale=1.0
+pixel_reconstruction_exact=True
+validation_passed=True
+sidecar_txt_git_excluded=True
