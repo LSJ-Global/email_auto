@@ -1,1 +1,4 @@
 .DS_Store
+
+# URL sidecars for source image detection are local-only.
+*.txt

@@ -1,0 +1,71 @@
+Subject: testeDM_www.naver.com
+From: eDM <no-reply@example.com>
+Date: Tue, 21 Jul 2026 00:38:15 +0000
+X-Unsent: 1
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============9019245286111355371=="
+
+--===============9019245286111355371==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+testeDM_www.naver.com
+
+--===============9019245286111355371==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!doctype html>
+<html lang=3D"ko">
+  <head>
+    <meta charset=3D"utf-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <title>testeDM_www.naver.com</title>
+    <style>
+      body { margin:0; padding:0; background:#f4f4f4; }
+      table { border-collapse:collapse; border-spacing:0; }
+      img { -ms-interpolation-mode:bicubic; }
+      @media screen and (max-width: 720px) {
+        .edm-wrapper { width:100% !important; }
+        .edm-image { width:100% !important; height:auto !important; }
+      }
+    </style>
+  </head>
+  <body style=3D"margin:0; padding:0; background:#f4f4f4;">
+    <center style=3D"width:100%; background:#f4f4f4;">
+      <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0">
+        <tr>
+          <td align=3D"center" style=3D"padding:0; margin:0;">
+            <table role=3D"presentation" class=3D"edm-wrapper" width=3D"700" =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:700px; margin=
+:0 auto;">
+            <tr>
+              <td style=3D"padding:0; margin:0; font-size:0; line-height:0;">
+                <img class=3D"edm-image" src=3D"https://raw.githubusercontent=
+.com/LSJ-Global/email_auto/main/testeDM_www.naver.com/images/slice_01.png" wi=
+dth=3D"700" height=3D"900" alt=3D"" style=3D"display:block; width:700px; heig=
+ht:900px; border:0; outline:none; text-decoration:none; line-height:0;">
+              </td>
+            </tr>
+            <tr>
+              <td style=3D"padding:0; margin:0; font-size:0; line-height:0;">
+                <img class=3D"edm-image" src=3D"https://raw.githubusercontent=
+.com/LSJ-Global/email_auto/main/testeDM_www.naver.com/images/slice_02.png" wi=
+dth=3D"700" height=3D"422" alt=3D"" style=3D"display:block; width:700px; heig=
+ht:422px; border:0; outline:none; text-decoration:none; line-height:0;">
+              </td>
+            </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>
+
+--===============9019245286111355371==--
