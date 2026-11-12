@@ -1,4 +1,5 @@
 .DS_Store
+.idea/
 
 # URL sidecars for source image detection are local-only.
 *.txt

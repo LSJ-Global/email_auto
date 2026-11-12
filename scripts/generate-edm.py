@@ -11,6 +11,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass
 from email.message import EmailMessage
 from email.policy import SMTP
@@ -22,14 +23,36 @@ from urllib.parse import quote
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 DISPLAY_WIDTH = 700
 MAX_SLICE_HEIGHT = 900
+CONFIG_NAME = "edm.config.json"
 
 
 @dataclass(frozen=True)
-class Slice:
+class Link:
+    url: str
+    alt: str
+    x: int
+    y: int
+    width: int
+    height: int
+
+
+@dataclass(frozen=True)
+class Cell:
     path: Path
     width: int
     height: int
     url: str
+    link: Link | None = None
+
+
+@dataclass(frozen=True)
+class Layout:
+    rows: list[list[Cell]]
+    background: str
+
+    @property
+    def cells(self) -> list[Cell]:
+        return [cell for row in self.rows for cell in row]
 
 
 def run(command: list[str], cwd: Path | None = None) -> str:
@@ -113,8 +136,45 @@ def save_processed(path: Path, data: dict) -> None:
     )
 
 
-def source_images(repository_root: Path, processed: dict, force: bool) -> list[Path]:
+def load_config(path: Path) -> dict:
+    """Optional per-image settings: title, lang and clickable link regions."""
+    if not path.exists():
+        return {}
+
+    with path.open("r", encoding="utf-8") as handle:
+        data = json.load(handle)
+
+    if not isinstance(data, dict):
+        raise ValueError(f"Expected object in {path}")
+    return data
+
+
+def parse_links(source_name: str, settings: dict) -> list[Link]:
+    links = []
+    for index, item in enumerate(settings.get("links", []), start=1):
+        try:
+            url = str(item["url"]).strip()
+            link = Link(
+                url=url,
+                alt=str(item.get("alt", "")),
+                x=int(item["x"]),
+                y=int(item["y"]),
+                width=int(item["width"]),
+                height=int(item["height"]),
+            )
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError(
+                f"{CONFIG_NAME}: link {index} of {source_name} needs url, x, y, width and height ({error})"
+            ) from error
+        if not re.match(r"^(https?://|mailto:)", url):
+            raise ValueError(f"{CONFIG_NAME}: link {index} of {source_name} must start with https://, http:// or mailto:")
+        links.append(link)
+    return links
+
+
+def source_images(repository_root: Path, processed: dict, force: bool, only: list[str]) -> list[Path]:
     processed_names = set(processed.get("images", {}).keys())
+    wanted = {Path(name).name for name in only}
     images = []
     for path in sorted(repository_root.iterdir(), key=lambda item: item.name.lower()):
         if not path.is_file():
@@ -123,9 +183,15 @@ def source_images(repository_root: Path, processed: dict, force: bool) -> list[P
             continue
         if path.suffix.lower() not in IMAGE_EXTENSIONS:
             continue
+        if wanted and path.name not in wanted:
+            continue
         if not force and path.name in processed_names:
             continue
         images.append(path)
+
+    missing = wanted - {path.name for path in images} - (set() if force else processed_names)
+    if missing:
+        raise ValueError(f"Source image not found in the repository root: {', '.join(sorted(missing))}")
     return images
 
 
@@ -153,60 +219,138 @@ def slice_image(
     repository: str,
     branch: str,
     swift: str,
-) -> list[Slice]:
+    links: list[Link],
+    image_format: str,
+) -> Layout:
     images_dir = output_dir / "images"
     images_dir.mkdir(parents=True, exist_ok=True)
+    for stale in images_dir.glob("slice_*"):
+        if stale.suffix.lower() in IMAGE_EXTENSIONS:
+            stale.unlink()
+
     slicer = repository_root / "scripts" / "slice-image.swift"
-    output = run(
-        [
-            swift,
-            str(slicer),
-            str(source),
-            str(images_dir),
-            str(DISPLAY_WIDTH),
-            str(MAX_SLICE_HEIGHT),
-        ]
-    )
+    regions = [{"x": link.x, "y": link.y, "width": link.width, "height": link.height} for link in links]
+    with tempfile.TemporaryDirectory() as temp_dir:
+        regions_path = Path(temp_dir) / "regions.json"
+        regions_path.write_text(json.dumps(regions), encoding="utf-8")
+        output = run(
+            [
+                swift,
+                str(slicer),
+                str(source),
+                str(images_dir),
+                str(DISPLAY_WIDTH),
+                str(MAX_SLICE_HEIGHT),
+                str(regions_path),
+                image_format,
+            ]
+        )
     manifest = json.loads(output)
 
-    slices: list[Slice] = []
-    for item in manifest["slices"]:
-        slice_path = images_dir / item["file"]
-        relative_path = repo_relative(repository_root, slice_path)
-        slices.append(
-            Slice(
-                path=slice_path,
-                width=item["width"],
-                height=item["height"],
-                url=raw_github_url(repository, branch, relative_path),
+    rows: list[list[Cell]] = []
+    for row in manifest["rows"]:
+        cells = []
+        for item in row["cells"]:
+            cell_path = images_dir / item["file"]
+            relative_path = repo_relative(repository_root, cell_path)
+            region = item.get("region")
+            cells.append(
+                Cell(
+                    path=cell_path,
+                    width=item["width"],
+                    height=item["height"],
+                    url=raw_github_url(repository, branch, relative_path),
+                    link=links[region] if region is not None else None,
+                )
             )
-        )
+        rows.append(cells)
 
-    return slices
+    return Layout(rows=rows, background=manifest["background"])
 
 
-def build_html_document(title: str, slices: list[Slice]) -> str:
+def image_tag(cell: Cell, src: str, alt: str) -> str:
+    return (
+        f"<img class=\"edm-image\" src=\"{html.escape(src, quote=True)}\" "
+        f"width=\"{cell.width}\" height=\"{cell.height}\" border=\"0\" alt=\"{html.escape(alt, quote=True)}\" "
+        f"style=\"display:block; width:{cell.width}px; height:{cell.height}px; "
+        "border:0; outline:none; text-decoration:none; line-height:0;\">"
+    )
+
+
+def build_html_document(title: str, lang: str, layout: Layout, output_dir: Path, local: bool = False) -> str:
+    """Build the email HTML. local=True uses relative image paths for previewing before a push."""
+    cell_style = "padding:0; margin:0; font-size:0; line-height:0;"
+    background = html.escape(layout.background, quote=True)
     rows = []
-    for item in slices:
+    mobile_rules = []
+    first_image = True
+
+    def source_of(cell: Cell) -> str:
+        return cell.path.relative_to(output_dir).as_posix() if local else cell.url
+
+    def cell_markup(cell: Cell) -> str:
+        nonlocal first_image
+        if cell.link:
+            tag = image_tag(cell, source_of(cell), cell.link.alt)
+            markup = (
+                f"<a href=\"{html.escape(cell.link.url, quote=True)}\" target=\"_blank\" "
+                f"style=\"display:block; margin:0; padding:0; border:0; line-height:0; font-size:0; text-decoration:none;\">"
+                f"{tag}</a>"
+            )
+        else:
+            markup = image_tag(cell, source_of(cell), title if first_image else "")
+        first_image = False
+        return markup
+
+    for row_index, row in enumerate(layout.rows, start=1):
+        if len(row) == 1:
+            rows.append(
+                "            <tr>\n"
+                f"              <td style=\"{cell_style}\">\n"
+                f"                {cell_markup(row[0])}\n"
+                "              </td>\n"
+                "            </tr>"
+            )
+            continue
+
+        # A row that contains a link: side images stay unlinked, only the link cell is clickable.
+        cells = []
+        for cell_index, cell in enumerate(row, start=1):
+            class_name = f"edm-r{row_index}c{cell_index}"
+            percent = cell.width * 100 / DISPLAY_WIDTH
+            mobile_rules.append(f"        .{class_name} {{ width:{percent:.4f}% !important; }}")
+            cells.append(
+                f"                    <td class=\"{class_name}\" width=\"{cell.width}\" valign=\"top\" "
+                f"style=\"width:{cell.width}px; {cell_style}\">\n"
+                f"                      {cell_markup(cell)}\n"
+                "                    </td>"
+            )
         rows.append(
             "            <tr>\n"
-            "              <td style=\"padding:0; margin:0; font-size:0; line-height:0;\">\n"
-            f"                <img class=\"edm-image\" src=\"{html.escape(item.url, quote=True)}\" "
-            f"width=\"{item.width}\" height=\"{item.height}\" alt=\"\" "
-            f"style=\"display:block; width:{item.width}px; height:{item.height}px; "
-            "border:0; outline:none; text-decoration:none; line-height:0;\">\n"
+            f"              <td bgcolor=\"{background}\" style=\"{cell_style} background:{background};\">\n"
+            f"                <table role=\"presentation\" class=\"edm-wrapper\" width=\"{DISPLAY_WIDTH}\" cellpadding=\"0\" "
+            f"cellspacing=\"0\" border=\"0\" style=\"width:{DISPLAY_WIDTH}px; border-collapse:collapse; "
+            "mso-table-lspace:0pt; mso-table-rspace:0pt;\">\n"
+            "                  <tr>\n"
+            + "\n".join(cells)
+            + "\n"
+            "                  </tr>\n"
+            "                </table>\n"
             "              </td>\n"
             "            </tr>"
         )
 
     escaped_title = html.escape(title)
+    escaped_lang = html.escape(lang, quote=True)
     body = "\n".join(rows)
+    mobile_css = ("\n" + "\n".join(mobile_rules)) if mobile_rules else ""
     return f"""<!doctype html>
-<html lang="ko">
+<html lang="{escaped_lang}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
     <title>{escaped_title}</title>
     <style>
       body {{ margin:0; padding:0; background:#f4f4f4; }}
@@ -214,7 +358,7 @@ def build_html_document(title: str, slices: list[Slice]) -> str:
       img {{ -ms-interpolation-mode:bicubic; }}
       @media screen and (max-width: 720px) {{
         .edm-wrapper {{ width:100% !important; }}
-        .edm-image {{ width:100% !important; height:auto !important; }}
+        .edm-image {{ width:100% !important; height:auto !important; }}{mobile_css}
       }}
     </style>
   </head>
@@ -235,13 +379,15 @@ def build_html_document(title: str, slices: list[Slice]) -> str:
 """
 
 
-def write_eml(path: Path, title: str, html_body: str) -> None:
+def write_eml(path: Path, title: str, html_body: str, links: list[Link]) -> None:
     message = EmailMessage(policy=SMTP)
     message["Subject"] = title
     message["From"] = "eDM <no-reply@example.com>"
     message["Date"] = format_datetime(dt.datetime.now(dt.timezone.utc))
     message["X-Unsent"] = "1"
-    message.set_content(f"{title}\n")
+    text_lines = [title, ""]
+    text_lines += [f"{link.alt}: {link.url}" if link.alt else link.url for link in links]
+    message.set_content("\n".join(text_lines).rstrip() + "\n")
     message.add_alternative(html_body, subtype="html")
     path.write_bytes(bytes(message))
 
@@ -253,25 +399,36 @@ def process_image(
     branch: str,
     processed: dict,
     swift: str,
+    settings: dict,
+    image_format: str,
 ) -> dict:
     stem = safe_stem(source)
     output_dir = repository_root / stem
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    slices = slice_image(source, output_dir, repository_root, repository, branch, swift)
-    title = stem
-    html_body = build_html_document(title, slices)
+    links = parse_links(source.name, settings)
+    if image_format == "auto":
+        image_format = "jpg" if source.suffix.lower() in {".jpg", ".jpeg"} else "png"
+
+    layout = slice_image(source, output_dir, repository_root, repository, branch, swift, links, image_format)
+    title = str(settings.get("title") or stem)
+    lang = str(settings.get("lang") or "ko")
+    html_body = build_html_document(title, lang, layout, output_dir)
     html_path = output_dir / f"{stem}.html"
+    local_html_path = output_dir / f"{stem}_local.html"
     eml_path = output_dir / f"{stem}.eml"
     html_path.write_text(html_body, encoding="utf-8")
-    write_eml(eml_path, title, html_body)
+    local_html_path.write_text(build_html_document(title, lang, layout, output_dir, local=True), encoding="utf-8")
+    write_eml(eml_path, title, html_body, links)
 
     record = {
         "source": repo_relative(repository_root, source),
         "source_sha256": sha256_file(source),
         "output_dir": repo_relative(repository_root, output_dir),
         "html": repo_relative(repository_root, html_path),
+        "local_preview": repo_relative(repository_root, local_html_path),
         "eml": repo_relative(repository_root, eml_path),
+        "title": title,
         "display_width": DISPLAY_WIDTH,
         "max_slice_height": MAX_SLICE_HEIGHT,
         "repository": repository,
@@ -279,12 +436,13 @@ def process_image(
         "generated_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "slices": [
             {
-                "file": repo_relative(repository_root, item.path),
-                "width": item.width,
-                "height": item.height,
-                "url": item.url,
+                "file": repo_relative(repository_root, cell.path),
+                "width": cell.width,
+                "height": cell.height,
+                "url": cell.url,
+                **({"link": cell.link.url} if cell.link else {}),
             }
-            for item in slices
+            for cell in layout.cells
         ],
     }
     processed["images"][source.name] = record
@@ -296,6 +454,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--repository-root", default=".", help="Repository root. Defaults to the current directory.")
     parser.add_argument("--branch", help="Target branch for raw GitHub image URLs.")
     parser.add_argument("--force", action="store_true", help="Regenerate source images even if processed.json already contains them.")
+    parser.add_argument(
+        "--format",
+        choices=("auto", "png", "jpg"),
+        default="auto",
+        help="Slice image format. auto keeps the source format (jpg source -> jpg slices).",
+    )
+    parser.add_argument("images", nargs="*", help="Only process these root image file names.")
     return parser.parse_args()
 
 
@@ -312,14 +477,28 @@ def main() -> int:
     repository = get_repository_slug(remote_url)
     branch = get_target_branch(repository_root, args.branch)
     processed = load_processed(processed_path)
-    targets = source_images(repository_root, processed, args.force)
+    config = load_config(repository_root / CONFIG_NAME)
+    targets = source_images(repository_root, processed, args.force, args.images)
 
     if not targets:
         print("No unprocessed source images found.")
         return 0
 
+    # Two different file names can collapse to the same folder once non-ASCII characters are removed.
+    stems: dict[str, str] = {}
+    for name in [*processed["images"].keys(), *(source.name for source in targets)]:
+        stem = safe_stem(Path(name))
+        if stems.setdefault(stem, name) != name:
+            raise ValueError(
+                f"{stems[stem]} and {name} would both be written to the folder '{stem}'. "
+                "Rename one of them using English letters, numbers, '-' or '_'."
+            )
+
     for source in targets:
-        record = process_image(source, repository_root, repository, branch, processed, swift)
+        settings = config.get(source.name, {})
+        if not isinstance(settings, dict):
+            raise ValueError(f"{CONFIG_NAME}: settings for {source.name} must be an object")
+        record = process_image(source, repository_root, repository, branch, processed, swift, settings, args.format)
         print(f"Generated {record['html']} and {record['eml']}")
 
     save_processed(processed_path, processed)

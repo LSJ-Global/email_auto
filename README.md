@@ -37,6 +37,30 @@ campaign_001/
 
 같은 폴더에 `campaign_001.html`과 `campaign_001_local.html`이 같이 있으면 `_local.html`은 건너뛰고 서버용 HTML을 우선 처리합니다.
 
+## 통이미지에서 HTML/EML 만들기 (Mac)
+
+저장소 루트에 eDM 통이미지(`.png`, `.jpg`)를 넣고 실행하면 `이미지명/` 폴더에 조각 이미지, `이미지명.html`, `이미지명.eml`, 미리보기용 `이미지명_local.html`이 생성됩니다. 파일명은 영문/숫자/`-`/`_`만 사용합니다(한글은 폴더명에서 빠져 국문·영문 파일이 같은 폴더로 겹칠 수 있음).
+
+```bash
+python3 scripts/generate-edm.py
+```
+
+버튼에만 링크를 걸려면 루트에 `edm.config.json`을 두고 버튼 위치를 700px 기준 좌표로 적습니다. 지정한 영역만 별도 조각으로 잘려 `<a>`로 감싸지고, 나머지 조각에는 링크가 걸리지 않습니다.
+
+```json
+{
+  "campaign_001.jpg": {
+    "title": "메일 제목",
+    "lang": "ko",
+    "links": [
+      { "url": "https://example.com/", "alt": "사전등록하기", "x": 209, "y": 364, "width": 282, "height": 66 }
+    ]
+  }
+}
+```
+
+이미 처리한 이미지를 다시 만들 때는 `python3 scripts/generate-edm.py --force campaign_001.jpg`를 사용합니다. HTML의 이미지 주소는 `raw.githubusercontent.com/<저장소>/<브랜치>/...`이므로 **push한 뒤에만** 실제로 보입니다. push 전에는 `_local.html`로 확인합니다.
+
 ## 수동 실행
 
 GitHub Actions에서 `Build Outlook templates` 워크플로를 수동 실행하고 `folder`에 처리할 폴더명을 입력할 수 있습니다.
