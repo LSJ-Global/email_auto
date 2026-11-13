@@ -1,0 +1,30 @@
+[2026-11-13T10:14:51+09:00] eDM 제작 시작
+시작 시 main 브랜치와 깨끗한 작업 트리 확인. git fetch origin main 및 git pull --rebase origin main 완료.
+입력: K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4.jpg
+출력: K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4
+원본: JPEG RGB 700x3188. 원본 바이트 사본 보존. 회전·확대·색 변환 미적용.
+대상 이미지의 실제 시각 분석 및 Pillow 색상·치수 분석을 수행함. 다른 원본은 처리하지 않음.
+배경 주조색 #021929, 푸터 #010c10. 배경색은 이미지가 들어가는 td에만 지정.
+사전등록 CTA 1개. 시각 경계 (208,364,492,431), 안전 여백 6px, 조각 경계 (202,358,498,437).
+CTA URL 출처: landing_urls; URL: https://ksntgforum.com/
+CTA 좌우 배경은 별도 조각으로 저장하고 링크를 걸지 않음. URL 부족 CTA 0개.
+원본 옆 TXT는 존재하지 않으며 읽거나 복사·스테이징하지 않음.
+PNG는 손실 없이 저장. 모든 좌표는 오른쪽·아래 제외 방식이며 전체 원본을 한 번씩 덮음.
+001 images/001_header.png [0, 0, 700, 358] 700x358: 행사명·일시·장소를 보존하고 CTA 위 여백에서 분할.
+002 images/002_cta_left_background.png [0, 358, 202, 437] 202x79: CTA 왼쪽 배경을 원본 그대로 보존하며 링크를 걸지 않음.
+003 images/003_registration.png [202, 358, 498, 437] 296x79: 버튼 전체와 사방 6px 안전 여백을 포함한 독립 CTA 조각.
+004 images/004_cta_right_background.png [498, 358, 700, 437] 202x79: CTA 오른쪽 배경을 원본 그대로 보존하며 링크를 걸지 않음.
+005 images/005_invitation_intro.png [0, 437, 700, 801] 700x364: 구분선·초대의 말씀 제목·첫 문단을 함께 두고 문단 사이 여백에서 분할.
+006 images/006_invitation_history.png [0, 801, 700, 1160] 700x359: 포럼 소개와 과학기술정책 60년 관련 문단을 보존하고 다음 문단 위 여백에서 분할.
+007 images/007_invitation_cooperation.png [0, 1160, 700, 1430] 700x270: 국제 공동 과제와 향후 협력 청사진 문단을 함께 두고 문단 사이 여백에서 분할.
+008 images/008_invitation_closing.png [0, 1430, 700, 1880] 700x450: 초대 마무리와 장관 서명을 보존하고 프로그램 구분선 전 여백에서 분할.
+009 images/009_program.png [0, 1880, 700, 2840] 700x960: 프로그램 제목·시간표 전체·변동 안내를 한 조각으로 보존하고 로고 위 여백에서 분할.
+010 images/010_organizers.png [0, 2840, 700, 3037] 700x197: 주최기관 로고와 하단 장식을 보존하고 푸터 배경 전환 지점에서 분할.
+011 images/011_footer.png [0, 3037, 700, 3188] 700x151: 푸터 배경 전환 지점부터 마지막 픽셀까지 보존.
+로컬 HTML: 상대 images/ 경로. 배포 HTML: origin에서 저장소를 구하고 main raw URL에 UTF-8 경로 인코딩 적용.
+HTML: 700px 중앙 정렬 table, 0 셀 간격, 인라인 CSS, CTA에만 target=_blank 및 rel=noopener noreferrer 적용.
+EML: SMTP 정책, UTF-8 quoted-printable HTML, X-Unsent: 1. From은 원본 푸터 문의 주소. To는 비어 있는 수신자 그룹.
+OFT 생성은 별도 워크플로 담당. 직접 실행하거나 기다리지 않음.
+산출물 생성 완료. 독립 검증 대기.
+[2026-11-13T10:14:54+09:00] 독립 검증 완료: 36개 항목 통과. 합성 700x3188, 다른 픽셀 0, 누락 0, 중복 0.
+원본 사본 SHA-256, 모든 PNG 픽셀·순서·영역, HTML 경로·CTA·배경 범위·표 배치, EML 재파싱·헤더·본문·QP·CRLF, ZIP 무결성, processed.json 기존 기록 보존, summary.json 유효성 확인.
