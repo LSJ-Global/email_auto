@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "image_name": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4",
+  "generated_at": "2026-11-13T10:26:16+09:00",
+  "input": {
+    "source_image": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4.jpg",
+    "source_extension": ".jpg",
+    "sha256": "df0900debead3bcc2b934c7ca764e99f6667e87015ff9652f0511244109e0166",
+    "format": "JPEG",
+    "mode": "RGB",
+    "width": 700,
+    "height": 3188,
+    "exif_orientation": 1
+  },
+  "output": {
+    "target_folder": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4",
+    "display_width": 700,
+    "slice_count": 11,
+    "row_count": 9,
+    "slice_format": "PNG",
+    "artifacts": {
+      "source_copy": "source.jpg",
+      "images_directory": "images/",
+      "local_html": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4_local.html",
+      "deployment_html": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4.html",
+      "eml": "K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4.eml",
+      "summary": "summary.json",
+      "processing_log": "processing.log",
+      "images_zip": "images.zip"
+    }
+  },
+  "repository": {
+    "origin": "https://github.com/LSJ-Global/email_auto",
+    "slug": "LSJ-Global/email_auto",
+    "branch": "main"
+  },
+  "color_analysis": {
+    "dominant_rgb": [
+      2,
+      25,
+      41
+    ],
+    "dominant_hex": "#021929",
+    "dominant_pixel_count": 1277801,
+    "channel_extrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        255
+      ],
+      [
+        12,
+        255
+      ]
+    ],
+    "background_scope": "Only the image-containing cells have background colors; body and wrapper have none."
+  },
+  "cta_count": 1,
+  "linked_cta_count": 1,
+  "unlinked_cta_count": 0,
+  "cta_urls": [
+    "https://ksntgforum.com/"
+  ],
+  "cta_url_resolution": {
+    "selected_source": "landing_urls",
+    "filename_url": null,
+    "landing_urls": [
+      "https://ksntgforum.com/"
+    ],
+    "sidecar_read": false,
+    "reason": "A valid landing URL supplies the only CTA; the lower-priority .txt sidecar was not needed.",
+    "unused_urls": [],
+    "missing_urls": []
+  },
+  "ctas": [
+    {
+      "order": 1,
+      "label": "사전등록하기",
+      "content_box": [
+        209,
+        364,
+        491,
+        430
+      ],
+      "slice_box": [
+        203,
+        358,
+        497,
+        436
+      ],
+      "safety_margin_px": 6,
+      "slice_file": "images/003_registration_cta.png",
+      "url": "https://ksntgforum.com/",
+      "url_source": "landing_urls[0]"
+    }
+  ],
+  "slices": [
+    {
+      "index": 1,
+      "name": "hero",
+      "file": "images/001_hero.png",
+      "box": [
+        0,
+        0,
+        700,
+        358
+      ],
+      "x": 0,
+      "y": 0,
+      "width": 700,
+      "height": 358,
+      "row": 0,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "K-Science and Technology Global Forum 2026. 2026년 12월 9일 수요일 08:00~13:30, 여의도 콘래드 서울 파크볼룸 5층.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/001_hero.png",
+      "sha256": "b33556838281059585f4d633d234f3e4852dfe90967b802ec420487e0a313ea8",
+      "background_color": "#021929"
+    },
+    {
+      "index": 2,
+      "name": "cta_left",
+      "file": "images/002_cta_left.png",
+      "box": [
+        0,
+        358,
+        203,
+        436
+      ],
+      "x": 0,
+      "y": 358,
+      "width": 203,
+      "height": 78,
+      "row": 1,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/002_cta_left.png",
+      "sha256": "5ae57864ae885ac191be2d68c66072ae9e027a8411f558808a5c0da0f9a4b626",
+      "background_color": "#021929"
+    },
+    {
+      "index": 3,
+      "name": "registration_cta",
+      "file": "images/003_registration_cta.png",
+      "box": [
+        203,
+        358,
+        497,
+        436
+      ],
+      "x": 203,
+      "y": 358,
+      "width": 294,
+      "height": 78,
+      "row": 1,
+      "is_cta": true,
+      "cta_url": "https://ksntgforum.com/",
+      "alt": "K-Science and Technology Global Forum 2026 사전등록하기",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/003_registration_cta.png",
+      "sha256": "9e4b7d65befb28134b4b25c20a238d116357ca28f84b6e2f282b78fcdf7d444c",
+      "background_color": "#021929"
+    },
+    {
+      "index": 4,
+      "name": "cta_right",
+      "file": "images/004_cta_right.png",
+      "box": [
+        497,
+        358,
+        700,
+        436
+      ],
+      "x": 497,
+      "y": 358,
+      "width": 203,
+      "height": 78,
+      "row": 1,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/004_cta_right.png",
+      "sha256": "5ae57864ae885ac191be2d68c66072ae9e027a8411f558808a5c0da0f9a4b626",
+      "background_color": "#021929"
+    },
+    {
+      "index": 5,
+      "name": "invitation_heading",
+      "file": "images/005_invitation_heading.png",
+      "box": [
+        0,
+        436,
+        700,
+        640
+      ],
+      "x": 0,
+      "y": 436,
+      "width": 700,
+      "height": 204,
+      "row": 2,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "초대의 말씀",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/005_invitation_heading.png",
+      "sha256": "821d0d85ea1323bf17f878ac82901bc72b42f892ce4fb732add0c644fd363f32",
+      "background_color": "#021929"
+    },
+    {
+      "index": 6,
+      "name": "invitation_part_1",
+      "file": "images/006_invitation_part_1.png",
+      "box": [
+        0,
+        640,
+        700,
+        1160
+      ],
+      "x": 0,
+      "y": 640,
+      "width": 700,
+      "height": 520,
+      "row": 3,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "과학기술정보통신부와 외교부의 초대: 과학기술 국제협력의 방향을 논의하는 포럼과 대한민국 과학기술정책 60년을 소개합니다.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/006_invitation_part_1.png",
+      "sha256": "54c8c644143821b06128833e23a867b7b31906d7fc04fd6098bdc782be236c17",
+      "background_color": "#021929"
+    },
+    {
+      "index": 7,
+      "name": "invitation_part_2",
+      "file": "images/007_invitation_part_2.png",
+      "box": [
+        0,
+        1160,
+        700,
+        1740
+      ],
+      "x": 0,
+      "y": 1160,
+      "width": 700,
+      "height": 580,
+      "row": 4,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "기후변화와 자연재해, AI, 우주개발, 식량 등 공동 과제를 위한 국제협력과 글로벌 번영을 논의합니다. 주한 외교관, 연구자 및 유관기관 관계자의 참석을 바랍니다.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/007_invitation_part_2.png",
+      "sha256": "b2dea748f336d5188a5dec1a6bea4f32519a876dc8316f0ae613968ec926a9db",
+      "background_color": "#021929"
+    },
+    {
+      "index": 8,
+      "name": "hosts_signature",
+      "file": "images/008_hosts_signature.png",
+      "box": [
+        0,
+        1740,
+        700,
+        1930
+      ],
+      "x": 0,
+      "y": 1740,
+      "width": 700,
+      "height": 190,
+      "row": 5,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "부총리 겸 과학기술정보통신부 장관 배경훈, 외교부 장관 조현.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/008_hosts_signature.png",
+      "sha256": "20ef9f2a1348007032ca39589d87e7c0063537ac87dcb4a4536442c2350c47b2",
+      "background_color": "#021929"
+    },
+    {
+      "index": 9,
+      "name": "program",
+      "file": "images/009_program.png",
+      "box": [
+        0,
+        1930,
+        700,
+        2835
+      ],
+      "x": 0,
+      "y": 1930,
+      "width": 700,
+      "height": 905,
+      "row": 6,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "프로그램: 08:00 네트워킹, 08:20 개회식, 08:50 과학기술 국제협력 전략과 성과, 09:30 휴식, 09:40 다자협력과 글로벌 문제해결, 10:40 휴식, 10:50 과학기술과 AI를 통한 글로벌 번영, 12:00~13:30 오찬 및 네트워킹. 진행상황에 따라 시간 및 프로그램이 변경될 수 있습니다.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/009_program.png",
+      "sha256": "cbf6d9c0b90bcd33b193ab5666f028251ab07032c2a146fa74450c63e06cbb3d",
+      "background_color": "#1a2f5e"
+    },
+    {
+      "index": 10,
+      "name": "organizers",
+      "file": "images/010_organizers.png",
+      "box": [
+        0,
+        2835,
+        700,
+        3038
+      ],
+      "x": 0,
+      "y": 2835,
+      "width": 700,
+      "height": 203,
+      "row": 7,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "주최: 과학기술정보통신부, 외교부.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/010_organizers.png",
+      "sha256": "2caad3322f9e6b4aa99d34b04649e50ddd785759dc5d8139d016345192a4a09f",
+      "background_color": "#021929"
+    },
+    {
+      "index": 11,
+      "name": "footer",
+      "file": "images/011_footer.png",
+      "box": [
+        0,
+        3038,
+        700,
+        3188
+      ],
+      "x": 0,
+      "y": 3038,
+      "width": 700,
+      "height": 150,
+      "row": 8,
+      "is_cta": false,
+      "cta_url": null,
+      "alt": "K-Science and Technology Global Forum 2026. 문의: ksnt2026@gmail.com. All rights reserved.",
+      "raw_url": "https://raw.githubusercontent.com/LSJ-Global/email_auto/main/K-SnT%20%EA%B8%80%EB%A1%9C%EB%B2%8C%ED%8F%AC%EB%9F%BC%20eDM%20%28w.700%29%20%EA%B5%AD%EB%AC%B8_261111_%EC%88%98%EC%A0%959__acct_59d930db18a4/images/011_footer.png",
+      "sha256": "307a58a1c84700a804d58cbec57985cb475ccf6c8992e6bfc3ea9dc7adac6674",
+      "background_color": "#010c10"
+    }
+  ],
+  "reconstruction": {
+    "width": 700,
+    "height": 3188,
+    "raw_pixel_sha256": "fadae3537e3bcd7fba892f7257d77f47c0ef6f09ac0104d79dba08fbbad71e49",
+    "reconstructed_raw_pixel_sha256": "fadae3537e3bcd7fba892f7257d77f47c0ef6f09ac0104d79dba08fbbad71e49",
+    "layout": "Concatenate cells left to right within each row, then rows top to bottom; CTA row has three cells."
+  },
+  "eml": {
+    "subject": "K-Science and Technology Global Forum 2026 사전등록 안내",
+    "from": "K-SnT Global Forum 2026 <ksnt2026@gmail.com>",
+    "to": "수신자 <recipient@example.com>",
+    "to_is_placeholder": true,
+    "from_source": "Contact address printed in the supplied image.",
+    "x_unsent": "1",
+    "html_content_transfer_encoding": "quoted-printable"
+  },
+  "duplicate_check": {
+    "existing_processed_record": true,
+    "existing_target_folder": false,
+    "action": "regenerated_missing_required_artifacts",
+    "reason": "The existing processed.json entry has no corresponding output folder; the skip condition is not satisfied."
+  },
+  "validation": {
+    "source_copy_sha256_matches": true,
+    "all_slice_files_exist": true,
+    "slice_numbering_continuous": true,
+    "all_source_pixels_covered_once": true,
+    "reconstructed_dimensions_match": true,
+    "reconstructed_pixels_identical": true,
+    "layout_rows_continuous": true,
+    "local_html_image_paths_exist": true,
+    "deployment_raw_urls_correct": true,
+    "cta_count_and_assignment_match": true,
+    "cta_box_has_6px_safety_margin": true,
+    "html_no_absolute_local_paths_file_urls_or_base64": true,
+    "html_tables_inline_email_layout": true,
+    "html_images_have_required_styles_and_alt": true,
+    "no_body_or_wrapper_background_extension": true,
+    "eml_reparse_succeeded": true,
+    "eml_headers_valid": true,
+    "eml_html_matches_deployment_html": true,
+    "eml_html_quoted_printable": true,
+    "eml_smtp_crlf_and_line_lengths_valid": true,
+    "images_zip_integrity_and_contents_match": true,
+    "summary_json_valid": true
+  }
+}

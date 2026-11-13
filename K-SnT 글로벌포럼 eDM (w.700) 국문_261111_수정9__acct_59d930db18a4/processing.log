@@ -1,0 +1,52 @@
+2026-11-13T10:26:16+09:00 eDM processing started for the single specified source: K-SnT 글로벌포럼 eDM (w.700) 국문_261111_수정9__acct_59d930db18a4.jpg
+Preflight: branch main and a completely clean tracked/untracked worktree were confirmed before any file write.
+Synchronization: git fetch origin main succeeded; git pull --rebase origin main returned Already up to date.
+Base commit: de2209d00eadf5158f0caccd82941da6333c863e; origin: https://github.com/LSJ-Global/email_auto; target branch: main.
+No other input images were searched or processed. Repository workflow/tool/script files were not modified.
+Existing processed.json record found, but its complete target output folder is absent; regeneration is required.
+Pillow inspection: JPEG RGB 700x3188; EXIF orientation 1; dominant RGB (2, 25, 41).
+Visual inspection: hero/event information, one gradient registration CTA, invitation, minister signatures, program, organizer logos and dark footer.
+CTA content box [209,364,491,430), expanded 6px on every side to [203,358,497,436).
+The CTA row is split into unlinked left background / linked complete button / unlinked right background.
+Other horizontal boundaries are blank content gaps, section gaps and the footer background transition.
+PNG slices preserve decoded JPEG pixels without resizing or lossy recompression; source.jpg preserves original bytes.
+URL priority: filename_url is null; landing_urls[0] supplies https://ksntgforum.com/; .txt sidecar was not read, copied, staged or committed.
+Display width: 700px; table layout with zero spacing and inline block-image styles; no body or wrapper background extension.
+Raw GitHub image URLs derive from git origin and use URL-encoded repository paths on main.
+EML: EmailMessage(policy.SMTP), X-Unsent: 1, UTF-8 quoted-printable HTML identical to deployment HTML after CRLF normalization.
+EML From uses the contact address printed in the source; To uses reserved placeholder recipient@example.com for an editable draft.
+Slice 001: images/001_hero.png; row=0; box=[0, 0, 700, 358]; dimensions=700x358; CTA=False.
+Slice 002: images/002_cta_left.png; row=1; box=[0, 358, 203, 436]; dimensions=203x78; CTA=False.
+Slice 003: images/003_registration_cta.png; row=1; box=[203, 358, 497, 436]; dimensions=294x78; CTA=True.
+Slice 004: images/004_cta_right.png; row=1; box=[497, 358, 700, 436]; dimensions=203x78; CTA=False.
+Slice 005: images/005_invitation_heading.png; row=2; box=[0, 436, 700, 640]; dimensions=700x204; CTA=False.
+Slice 006: images/006_invitation_part_1.png; row=3; box=[0, 640, 700, 1160]; dimensions=700x520; CTA=False.
+Slice 007: images/007_invitation_part_2.png; row=4; box=[0, 1160, 700, 1740]; dimensions=700x580; CTA=False.
+Slice 008: images/008_hosts_signature.png; row=5; box=[0, 1740, 700, 1930]; dimensions=700x190; CTA=False.
+Slice 009: images/009_program.png; row=6; box=[0, 1930, 700, 2835]; dimensions=700x905; CTA=False.
+Slice 010: images/010_organizers.png; row=7; box=[0, 2835, 700, 3038]; dimensions=700x203; CTA=False.
+Slice 011: images/011_footer.png; row=8; box=[0, 3038, 700, 3188]; dimensions=700x150; CTA=False.
+Validation source_copy_sha256_matches: PASS.
+Validation all_slice_files_exist: PASS.
+Validation slice_numbering_continuous: PASS.
+Validation all_source_pixels_covered_once: PASS.
+Validation reconstructed_dimensions_match: PASS.
+Validation reconstructed_pixels_identical: PASS.
+Validation layout_rows_continuous: PASS.
+Validation local_html_image_paths_exist: PASS.
+Validation deployment_raw_urls_correct: PASS.
+Validation cta_count_and_assignment_match: PASS.
+Validation cta_box_has_6px_safety_margin: PASS.
+Validation html_no_absolute_local_paths_file_urls_or_base64: PASS.
+Validation html_tables_inline_email_layout: PASS.
+Validation html_images_have_required_styles_and_alt: PASS.
+Validation no_body_or_wrapper_background_extension: PASS.
+Validation eml_reparse_succeeded: PASS.
+Validation eml_headers_valid: PASS.
+Validation eml_html_matches_deployment_html: PASS.
+Validation eml_html_quoted_printable: PASS.
+Validation eml_smtp_crlf_and_line_lengths_valid: PASS.
+Validation images_zip_integrity_and_contents_match: PASS.
+Validation summary_json_valid: PASS.
+images.zip includes only the 11 images/ PNG slices in display order.
+OFT generation is delegated to the separate workflow; it was not run or awaited.
