@@ -1,0 +1,52 @@
+[2026-11-13T09:36:38+09:00] Begin single-source eDM asset generation.
+Preflight: current branch main; tracked and untracked worktree clean. git fetch origin main and git pull --rebase origin main both succeeded; already up to date.
+Base commit: b6b2b8c35f9a8732c5182adc64f45d746f16474e
+Source: K-SnT 글로벌포럼 eDM (w.700) 영문_261111_수정9__acct_59d930db18a4.jpg; tracked input, retained in place, not restaged.
+Duplicate check: no matching entry in processed.json and target folder absent; generation authorized.
+Visual analysis: title, date and venue; one Register Now CTA; invitation paragraphs; minister signatures; program timetable; organizer logos; darker footer.
+Pillow: JPEG RGB, 700x3434; dominant RGB (2,25,41), footer RGB (1,12,16). No resize, color conversion, EXIF transpose or pixel removal applied.
+CTA URL selection: filename_url absent, so first landing_urls value used: https://ksntgforum.com/en/home2/
+Sibling .txt absent; none read, copied, staged or committed. No other input images searched or processed.
+CTA visual bounds [209,364,491,430); isolated bounds [201,356,499,438), eight-pixel background safety margin on all four sides. No additional shadow or glow visible outside these bounds.
+CTA row retains unlinked left [0,201) and right [499,700) background cells. Only the center CTA image is enclosed in an anchor.
+Source copied byte-for-byte to source.jpg. All slices saved as lossless PNG to preserve decoded JPEG pixels exactly.
+001: images/001_header.png box=[0, 0, 700, 356], size=700x356; Event title and venue; boundary in the blank space above the CTA.
+002: images/002_cta_left_background.png box=[0, 356, 201, 438], size=201x82; Unlinked background to the left of the CTA.
+003: images/003_register_now.png box=[201, 356, 499, 438], size=298x82; CTA bounds include eight pixels of safety space on every side.
+004: images/004_cta_right_background.png box=[499, 356, 700, 438], size=201x82; Unlinked background to the right of the CTA.
+005: images/005_invitation_intro.png box=[0, 438, 700, 773], size=700x335; Includes the Invitation heading and opening paragraph; ends in the paragraph gap.
+006: images/006_invitation_history.png box=[0, 773, 700, 1161], size=700x388; Keeps the introductory cooperation and history paragraphs together; ends between paragraphs.
+007: images/007_invitation_cooperation.png box=[0, 1161, 700, 1629], size=700x468; Keeps the current challenges and future roadmap paragraphs together; ends between paragraphs.
+008: images/008_invitation_closing.png box=[0, 1629, 700, 2135], size=700x506; Includes the closing invitation and minister signatures; ends before the Program section divider.
+009: images/009_program.png box=[0, 2135, 700, 3118], size=700x983; Preserves the Program heading, entire timetable and working-draft note in one section.
+010: images/010_organizers.png box=[0, 3118, 700, 3284], size=700x166; Organizer logos and lower decoration; ends at the footer background transition.
+011: images/011_footer.png box=[0, 3284, 700, 3434], size=700x150; Footer starts exactly at the observed background-color transition.
+HTML: 700px display width, centered presentation tables, zero cell spacing, inline CSS and block images. No background assigned to body or full-width wrapper; colors limited to content cells.
+Deployment image URL prefix derived from git remote: https://raw.githubusercontent.com/LSJ-Global/email_auto/main/; all path segments URL-encoded.
+EML: EmailMessage and policy.SMTP; UTF-8 quoted-printable HTML, X-Unsent: 1, event contact as From, empty recipient group in To. Draft only; no email sent.
+images.zip contains exactly the eleven images/ entries, in display order.
+Git scope: only target folder and root processed.json may be staged. OFT creation left to the separate workflow; not invoked or awaited.
+EML serialization uses SMTP policy with max_line_length=76 for MIME-compliant quoted-printable wrapping.
+PASS: required_artifacts_exist
+PASS: source_copy_sha256_matches
+PASS: slice_files_exist_and_numbering_continuous
+PASS: every_crop_matches_source_pixels
+PASS: source_coverage_exactly_once
+PASS: reassembled_dimensions_match
+PASS: reassembled_pixels_identical
+PASS: local_html_image_paths_exist
+PASS: deployment_image_urls_correct_main_raw_paths
+PASS: cta_links_match_analysis_and_assignment
+PASS: only_cta_image_is_linked
+PASS: html_has_no_absolute_local_paths_file_urls_or_base64
+PASS: html_uses_tables_inline_styles_and_gapless_images
+PASS: background_colors_limited_to_content_cells
+PASS: local_and_deployed_html_differ_only_in_image_urls
+PASS: eml_reparsed_without_defects
+PASS: eml_required_headers_present_and_x_unsent_1
+PASS: eml_html_matches_deployment_html
+PASS: eml_utf8_quoted_printable_smtp_serialization
+PASS: images_zip_crc_and_contents_match
+PASS: processed_json_record_valid
+PASS: summary_json_valid
+Final reconstruction: 700x3434, zero differing, missing or duplicated pixels. All artifact checks passed.
