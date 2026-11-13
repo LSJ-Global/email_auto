@@ -7,7 +7,7 @@ import {createHash} from "node:crypto";
 const GITHUB_TOKEN = defineSecret("GITHUB_TOKEN");
 
 const GITHUB_OWNER = "LSJ-Global";
-const GITHUB_REPOSITORY = "edm_auto_site";
+const GITHUB_REPOSITORY = "email_auto";
 const TARGET_BRANCH = "main";
 const WORKFLOW_FILE = "generate-edm.yml";
 const GITHUB_API_VERSION = "2026-03-10";
