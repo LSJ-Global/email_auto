@@ -1,0 +1,69 @@
+name: Generate eDM assets with local Codex
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_path:
+        description: "Repository-relative path of the uploaded source image."
+        required: true
+        type: string
+      landing_urls:
+        description: "Optional CTA URLs separated by commas or new lines."
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: generate-edm-main
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Analyze image and generate eDM files
+    runs-on: [self-hosted, macOS, ARM64, codex-local, m5]
+    timeout-minutes: 90
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Verify local Codex environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          codex --version
+          codex login status
+          python3 -c "from PIL import Image; print('Pillow is available')"
+          test -z "$(git status --porcelain)"
+
+      - name: Generate eDM assets
+        id: generate
+        shell: bash
+        env:
+          IMAGE_PATH: ${{ inputs.image_path }}
+          LANDING_URLS: ${{ inputs.landing_urls }}
+        run: |
+          set -euo pipefail
+          python3 scripts/run-edm-codex.py \
+            --image "$IMAGE_PATH" \
+            --landing-urls "$LANDING_URLS"
+
+      - name: Start OFT build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_FOLDER: ${{ steps.generate.outputs.target_folder }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run build-oft.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref main \
+            -f folder="$TARGET_FOLDER" \
+            -f commit_outputs=true
+          echo "OFT workflow dispatched for: $TARGET_FOLDER"

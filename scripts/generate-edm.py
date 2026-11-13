@@ -172,8 +172,22 @@ def parse_links(source_name: str, settings: dict) -> list[Link]:
     return links
 
 
+def processed_source_names(processed: dict) -> set[str]:
+    """Root image names that already have results, including jobs made by the web (Codex) workflow."""
+    names = set(processed.get("images", {}).keys())
+    records = [*processed.get("images", {}).values(), *processed.get("processed", [])]
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        for key in ("source", "source_path"):
+            value = record.get(key)
+            if isinstance(value, str) and value:
+                names.add(Path(value).name)
+    return names
+
+
 def source_images(repository_root: Path, processed: dict, force: bool, only: list[str]) -> list[Path]:
-    processed_names = set(processed.get("images", {}).keys())
+    processed_names = processed_source_names(processed)
     wanted = {Path(name).name for name in only}
     images = []
     for path in sorted(repository_root.iterdir(), key=lambda item: item.name.lower()):

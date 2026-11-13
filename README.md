@@ -37,6 +37,20 @@ campaign_001/
 
 같은 폴더에 `campaign_001.html`과 `campaign_001_local.html`이 같이 있으면 `_local.html`은 건너뛰고 서버용 HTML을 우선 처리합니다.
 
+## 웹사이트에서 만들기 (edm-auto-project.web.app)
+
+웹앱 소스는 `edm-auto-web` 브랜치에 있습니다(Flutter + Firebase). main에 합치지 않습니다. main에 넣으면 `build-oft.yml`이 웹앱의 HTML·PNG를 eDM으로 처리하려고 합니다.
+
+1. 사이트에서 이미지와 랜딩 URL을 입력하면 Firebase 함수(`functions/src/index.ts`)가 이미지를 이 저장소 main 루트에 `이미지명__acct_<계정키>.png`로 올립니다.
+2. 함수가 `.github/workflows/generate-edm.yml`을 실행합니다. 자체 러너(`self-hosted, macOS, ARM64, codex-local, m5`)에서 `scripts/run-edm-codex.py`가 `.github/codex/prompts/generate-edm.md` 프롬프트로 로컬 Codex를 돌려 조각 이미지·HTML·EML을 만들고 push합니다.
+3. `build-oft.yml`이 `.oft`를 만들어 커밋합니다.
+4. 사이트가 결과 폴더를 확인해 html·eml·oft 다운로드를 보여줍니다.
+
+동작 조건:
+
+- 자체 러너가 이 저장소(또는 조직)에 등록되어 켜져 있고, 러너에서 `codex login status`가 로그인 상태여야 합니다. `Verify local Codex runner` 워크플로(`local-codex-smoke.yml`)를 수동 실행해 확인합니다.
+- Firebase 시크릿 `GITHUB_TOKEN`에 이 저장소의 Contents·Actions 쓰기 권한이 있어야 합니다.
+
 ## 통이미지에서 HTML/EML 만들기 (Mac)
 
 저장소 루트에 eDM 통이미지(`.png`, `.jpg`)를 넣고 실행하면 `이미지명/` 폴더에 조각 이미지, `이미지명.html`, `이미지명.eml`, 미리보기용 `이미지명_local.html`이 생성됩니다. 파일명은 영문/숫자/`-`/`_`만 사용합니다(한글은 폴더명에서 빠져 국문·영문 파일이 같은 폴더로 겹칠 수 있음).
